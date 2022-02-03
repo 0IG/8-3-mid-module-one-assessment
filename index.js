@@ -26,8 +26,12 @@ const animals = [
  * getTotalCount(animals); //> 28
  * getTotalCount([]); //> 0 // returns 0 if the input array is empty
  */
-function getTotalCount(animals) {}
-
+function getTotalCount(animals) {
+    let num = 0
+    for (let index = 0; index < animals.length; index++){
+       num += animals[index].count
+    } return num
+};
 /**
  * FUNCTION DESCRIPTION
  * ------------------
@@ -40,7 +44,12 @@ function getTotalCount(animals) {}
  * getAllKinds(animals); //> ["Pig", "Cow", "Chicken", "Horse", "Dog", "Cat"]
  * getAllKinds([]); //> [] // returns empty array if input array is empty
  */
-function getAllKinds(animals) {}
+function getAllKinds(animals) {
+    let arr = []
+    for (let index = 0; index < animals.length; index++){
+      arr.push(animals[index].kind)
+    }return arr
+};
 
 /**
  * FUNCTION DESCRIPTION
@@ -59,7 +68,18 @@ function getAllKinds(animals) {}
   ];
  * filterByCountMinimum([], 3); //> [] // returns empty array if input array is empty
  */
-function filterByCountMinimum(animals, minimum) {}
+function filterByCountMinimum(animals, minimum) {
+    let arr = []
+    for (let index = 0; index < animals.length; index++){
+//                  1 || 0     >=    0
+      if (animals[index].count >= minimum){
+        // How do we remove everything that doesn't reach our conditional?
+        // .reducer || .splice || .sort
+        let res = animals.slice(animals)
+        arr.push(res)
+      }
+    } return arr
+ };
 
 /**
  * FUNCTION DESCRIPTION
@@ -73,7 +93,11 @@ function filterByCountMinimum(animals, minimum) {}
  * getMostCommonAnimal(animals); //> { kind: "Chicken", count: 11 }
  * getMostCommonAnimal([]); //> null // returns null if the input is empty
  */
-function getMostCommonAnimal(animals) {}
+function getMostCommonAnimal(animals) {
+  //let ret = null
+  //for (let index = 0; index < animals.length; index++){
+  // Let's use our other objects to finish this one maybe?
+};
 
 // Do not change anything below this line.
 module.exports = {
